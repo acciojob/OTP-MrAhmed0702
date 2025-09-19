@@ -1,1 +1,87 @@
 /*  your css code here. If applicable */
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0
+}
+
+body{
+	font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+	font-size:16px;
+	background:#f6f7f8;
+	color:#222;
+	min-height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:40px
+}
+
+.card{
+	width:100%;
+	background:#fff;
+	border-radius:12px;
+	border:3px solid #000;
+	padding:48px 36px;
+	box-shadow:0 2px 8px rgba(0,0,0,0.4)
+}
+
+h1#verification_heading{
+	text-align:center;
+	font-size:32px;
+	margin-bottom:12px;
+	font-weight:600
+}
+
+p#verification_subtext{
+	text-align:center;
+	color:#6b6b6b;
+	margin-bottom:32px
+}
+
+.code-container{
+	display:flex;
+	gap:22px;
+	justify-content:center;
+	margin:28px 0
+}
+
+.code{
+	width:96px;
+	height:96px;
+	border-radius:8px;
+	border:1px solid #eee;
+	background:#fafafa;
+	font-size:56px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	text-align:center;
+	outline:none
+}
+.code::-webkit-outer-spin-button, .code::-webkit-inner-spin-button{
+	appearance:none;
+	margin:0
+}
+
+.note{
+	margin:20px auto 0;
+	max-width:640px;
+	background:#eee;
+	color:#666;
+	padding:16px;
+	border-radius:8px;
+	text-align:center
+}
+
+@media(max-width:700px){
+	.code{
+		width:64px;
+		height:64px;
+		font-size:36px
+	}
+	
+	.card{
+		padding:28px
+	}
+}
