@@ -59,10 +59,6 @@ p#verification_subtext{
 	text-align:center;
 	outline:none
 }
-.code::-webkit-outer-spin-button, .code::-webkit-inner-spin-button{
-	appearance:none;
-	margin:0
-}
 
 .note{
 	margin:20px auto 0;

@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // arrow navigation
       if (key === 'ArrowLeft') {
         e.preventDefault();
         const prev = inputs[idx - 1];
@@ -41,21 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const next = inputs[idx + 1];
         if (next) next.focus();
         return;
-      }
-
-      if (key.length === 1 && !/^\d$/.test(key)) {
-        e.preventDefault();
-      }
-
-      if (/^\d$/.test(key)) {
-        setTimeout(() => {
-          if (input.value) {
-            const next = inputs[idx + 1];
-            if (next) next.focus();
-          }
-        }, 10);
-      }
+      }	
     });
+	  
+	input.addEventListener('input', e => {
+		const v = e.target.value.replace(/\D/g,'').slice(-1);
+		e.target.value = v;
+		if (v) {
+		    const next = inputs[idx+1];
+		    if (next) next.focus();
+		}
+	});
 
+	input.addEventListener('paste', e => {
+		e.preventDefault();
+		const paste = (e.clipboardData || window.clipboardData).getData('text');
+		const digits = paste.replace(/\D/g, '').split(''); // keep only digits, turn into array
+
+		for (let i = 0; i < digits.length && (idx + i) < inputs.length; i++) {
+		    inputs[idx + i].value = digits[i];
+		}
+
+		const focusIdx = Math.min(inputs.length - 1, idx + digits.length);
+		inputs[focusIdx].focus();
+	});
+	  
   });
 });
