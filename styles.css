@@ -53,21 +53,7 @@ p#verification_subtext{
 	border:1px solid #eee;
 	background:#fafafa;
 	font-size:56px;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	text-align:center;
-	outline:none
-}
-
-.note{
-	margin:20px auto 0;
-	max-width:640px;
-	background:#eee;
-	color:#666;
-	padding:16px;
-	border-radius:8px;
-	text-align:center
+	text-align:center;	
 }
 
 @media(max-width:700px){
